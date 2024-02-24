@@ -1,0 +1,3 @@
+$(function() {
+  $('.conter').slick();
+});

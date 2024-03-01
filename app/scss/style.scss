@@ -129,7 +129,6 @@
     padding: 16px 36px 16px 62px;
     position: relative;
     transition: background-color 0.5s;
-
     &:hover {
       background-color: $green-200;
     }
@@ -158,21 +157,19 @@
 }
 
 
-.catalog__text {}
-
-.catalog__icon {}
-
 
 .search {
   max-width: 576px;
   width: 100%;
   position: relative;
   height: 50px;
+
   &__wrapper {
     display: flex;
     align-items: center;
     width: 100%;
   }
+
   &__icon {
     width: 20px;
     height: 20px;
@@ -199,6 +196,7 @@
       background-color: $green-200;
     }
   }
+
   &__btn {
     display: block;
     @extend %opensans-600;
@@ -211,6 +209,7 @@
     padding: 15px 52px;
     border-radius: 0 6px 6px 0;
     transition: opacity 0.3s, box-shadow 0.3s;
+
     &:focus {
       box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.5);
     }
@@ -228,7 +227,6 @@
   display: flex;
   gap: 10px;
   margin-left: auto;
-
   &__link {
     display: block;
     width: 50px;
@@ -240,7 +238,6 @@
     position: relative;
     transition: opacity 0.4s, background 0.4s, box-shadow 0.4s;
   }
-
   &__num {
     position: absolute;
     display: flex;
@@ -274,13 +271,11 @@
 
 
 .main-slider {
-
   &__item {
     background-repeat: no-repeat;
     background-position: center bottom;
     background-size: cover;
   }
-
   &__item {
     height: calc(100vh - 160px);
     display: flex !important;
@@ -289,11 +284,9 @@
   }
   &__inner {
     min-height: 315px;
-
   }
   &__content {
     padding: 24px;
-
   }
 
   &__title,
@@ -304,16 +297,13 @@
     text-transform: uppercase;
     margin-bottom: 12px;
   }
-
   &__title {
     color: $dark-500;
   }
-
   &__subtitle {
     display: block;
     color: $red-900;
   }
-
   &__text {
     font-size: 16px;
     margin-bottom: 32px;
@@ -331,6 +321,7 @@
   top: 50%;
   transform: translateY(-50%);
   border-radius: 6px;
+
   &:focus {
     box-shadow: 0 0 0 3px rgba(99, 166, 14, 0.5);
     background: #f2f2f2;
@@ -343,25 +334,18 @@
   }
 }
 
-// .slick-prev svg:hover path {
-//     fill: $green-900;
-// }
-// .slick-prev:focus svg path {
-//   fill: #5A5A5A;
-// }
-
-
 
 .slick-prev {
   left: 60px;
 }
+
 .slick-next {
   right: 60px;
 }
 
 .benefits {
   background-color: $silver-100;
-  padding: 48px 29px;
+  padding: 48px 0 29px;
 
   &__list {
     display: flex;
@@ -370,9 +354,9 @@
   }
 
   &__item {
+    width: 264px;
     padding-left: 74px;
     text-align: left;
-    max-width: 264px;
     position: relative;
 
     &::before {
@@ -415,6 +399,286 @@
 }
 
 
+.top {
+  text-align: center;
+
+  &__items {
+    margin-bottom: 48px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+  }
+
+  &__btn {
+    @extend %btn;
+    border: 1px solid $green-900;
+    background-color: $white;
+    color: $green-900;
+
+    &:focus {
+      box-shadow: 0 0 0 4px rgba(99, 166, 14, 0.5);
+    }
+
+    &:hover {
+      background-color: $green-100;
+    }
+
+    &:active {
+      box-shadow: inset 0 10px 4px 0 rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 48px;
+
+  &__btn {
+    display: inline-block;
+    @extend %opensans-700;
+    font-size: 15px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    transition: box-shadow 0.3s, color 0.3s, border-bottom 0.3s, border-radius 0.3s;
+    border-bottom: 3px solid transparent;
+    &:focus {
+      border-radius: 3px;
+      box-shadow: 0 0 0 3px #e0edcf;
+      border-bottom: none;
+    }
+
+    &:hover {
+      color: $green-900;
+    }
+
+    &:active {
+      border-bottom: 3px solid rgba(99, 166, 14, 0.2);
+    }
+  }
+}
+
+.mixitup-control-active {
+  border-bottom: 3px solid rgba(99, 166, 14, 0.2);
+}
+
+
+.product {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  height: 409px;
+  border: 1px solid $silver-600;
+  border-radius: 6px;
+  padding-top: 57px;
+  transition: border-color 0.3s;
+
+  &--new {
+    .product__new {
+      display: block;
+    }
+  }
+
+  &--sale {
+    .product__sale {
+      display: block;
+    }
+  }
+
+  &--hit {
+    .product__hit {
+      display: block;
+    }
+  }
+
+  &:hover {
+    border: 1px solid $green-900;
+    // transform: scale(1.05);
+  }
+
+  &__top {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  &__favorite {
+    padding-top: 5px;
+    transition: box-shadow 0.3s, fill 0.3s, opacity 0.3s;
+
+    &:focus {
+      border-radius: 3px;
+      box-shadow: 0 0 0 3px $green-200;
+    }
+
+    &:hover {
+      path {
+        fill: $yellow-900;
+      }
+    }
+
+    &:active {
+      path {
+        fill: $yellow-900;
+        opacity: 0.5;
+      }
+    }
+  }
+
+
+  &__new,
+  &__sale,
+  &__hit {
+    border-radius: 6px;
+    color: $white;
+    @extend %opensans-700;
+    padding: 3px 6px;
+    font-size: 10px;
+    line-height: 1;
+    width: fit-content;
+    text-transform: uppercase;
+    display: none;
+    margin-bottom: 6px;
+    letter-spacing: 0.03em;
+  }
+
+  &__new {
+    background-color: $green-900;
+  }
+
+  &__sale {
+    background-color: $red-900;
+  }
+
+  &__hit {
+    background-color: $orange-900;
+  }
+
+  &__img-box {
+    height: 215px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: transparent;
+      transition: background-color 0.7s;
+    }
+
+    &:hover {
+      .product__link-box {
+        opacity: 1;
+      }
+    }
+
+    &:hover {
+      &::before {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+
+  &__link-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 48px;
+    height: 48px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: $white;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.5s, opacity 0.5s;
+    opacity: 0;
+    background-color: $white;
+  }
+
+  &__link {
+    width: 20px;
+    height: 20px;
+    @extend %icon_bg;
+    display: inherit;
+  }
+
+  &__img {
+    height: 100%;
+    margin: 0 auto;
+  }
+
+  &__content {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+  }
+
+  &__title {
+    @extend %opensans-600;
+    letter-spacing: 0.03em;
+    text-align: left;
+    height: 60px;
+    overflow: hidden;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  &__old-price,
+  &__new-price {
+    line-height: 1;
+    letter-spacing: 0.03em;
+  }
+
+  &__old-price {
+    color: $silver-600;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      border-bottom: 1px solid $silver-600;
+      width: 100%;
+      height: 50%;
+      transform: rotate(-12deg);
+    }
+  }
+
+  &__cart {
+    border-radius: 3px;
+    width: 32px;
+    height: 32px;
+    padding: 8px;
+    @extend %btn;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+}
+
+
+
+
 .footer {
   padding: 30px 0 24px;
   background-color: $dark-800;
@@ -428,12 +692,10 @@
 
   &__wrapper {
     display: flex;
-    // justify-content: space-between;
     padding-bottom: 30px;
   }
 
   &__bottom {
-
     border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
 
@@ -467,19 +729,23 @@
 
 .subscribe {
   margin-right: 150px;
+
   &__text {
     display: inline-block;
     margin-bottom: 15px;
   }
+
   &__form {
     max-width: 306px;
     height: 40px;
   }
+
   &__wrapper {
     display: flex;
     align-items: center;
     width: 100%;
   }
+
   &__field {
     border: none;
     border-radius: 6px 0 0 6px;
@@ -487,14 +753,17 @@
     width: 100%;
     background-color: $white;
     padding: 10px 13px;
+
     &::placeholder {
       color: $dark-800;
     }
+
     &:focus,
     &:hover {
       background-color: $green-200;
     }
   }
+
   &__btn {
     @extend %btn;
     padding: 12px 15px;

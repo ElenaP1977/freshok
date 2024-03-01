@@ -6,7 +6,8 @@ $(function () {
     autoplaySpeed: 4500,
     // fade: true,
     cssEase: 'ease-out',
-
-
   });
+
+
+  var mixer = mixitup('.top__items');
 });

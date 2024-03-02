@@ -6,6 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ФрешОк</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="icon" href="images/favicons/favicon.svg">
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 
@@ -46,27 +48,21 @@
             <img class="logo__img" src="images/logo.svg" alt="логотип">
           </a>
 
-          <div class="catalog">
-            <button class="catalog__btn">
-              <div class="catalog__burger" type="button"
-                style="background-image: url('images/icons/user_nav/nav_icon.svg')">
-              </div>
-              <span class="catalog__text">Каталог продуктов</span>
-              <div class="catalog__arrow" style="background-image: url('images/icons/user_nav/select-arrow.svg')"></div>
-            </button>
-          </div>
-
+          <button class="catalog" type="button">
+            <span class="catalog__burger" style="background-image: url('images/icons/user_nav/nav_icon.svg')">
+            </span>
+            <span class="catalog__text">Каталог продуктов</span>
+            <span class="catalog__arrow"></span>
+          </button>
 
           <form class="search">
-            <div class="search__icon" style="background-image: url('images/icons/user_nav/form-search.svg')">
-            </div>
+            <span class="search__icon" style="background-image: url('images/icons/user_nav/form-search.svg')">
+            </span>
             <div class="search__wrapper">
               <input class="search__field" type="search" name="search" placeholder="Найти в магазине ...">
               <button class="search__btn" type="submit">Поиск</button>
             </div>
           </form>
-
-
 
           <ul class="user-nav">
             <li class="user-nav__item">

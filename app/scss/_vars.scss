@@ -83,6 +83,12 @@ $white: #FFFFFF;
   }
 }
 
+%bg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+}
+
 %icon_bg {
   display: inline-block;
   background-repeat: no-repeat;
@@ -95,5 +101,4 @@ $white: #FFFFFF;
   position: absolute;
   background-repeat: no-repeat;
   background-size: contain;
-  
 }

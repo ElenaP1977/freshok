@@ -5,15 +5,14 @@
         <img class="logo__img" src="images/logo.svg" alt="логотип">
       </a>
       <div class="footer__wrapper">
-        <div class="subscribe">
-          <span class="subscribe__text">Следите за нашими акциями</span>
-          <form class="subscribe__form">
-            <div class="subscribe__wrapper">
-              <input class="subscribe__field" type="email" name="email" placeholder="email@email.com" required>
-              <button class="subscribe__btn" type="submit">Подписаться</button>
-            </div>
-          </form>
-        </div>
+        <form class="subscribe-form footer__subscribe-form">
+          <label class="subscribe-form__label" for="email">Следите за нашими акциями</label>
+          <div class="subscribe-form__wrapper">
+            <input class="subscribe-form__field" type="email" name="email" placeholder="email@email.com" id="email"
+              required>
+            <button class="subscribe-form__btn" type="submit">Подписаться</button>
+          </div>
+        </form>
 
 
         <ul class="footer__menu">
@@ -57,22 +56,25 @@
             <li class="social__item">
               <a class="social__link" href="#" target="_blank"
                 style="background-image: url('images/icons/social/facebook.svg')">
-                <span class="sr-only">Cсылка на Фейсбук</span>
+                <span class="sr-only">Фейсбук</span>
               </a>
             </li>
             <li class="social__item">
-              <a class="social__link" href="#" target="_blank" style="background-image: url('images/icons/social/youtube.svg')">
-                <span class="sr-only">Cсылка на Ютуб</span>
+              <a class="social__link" href="#" target="_blank"
+                style="background-image: url('images/icons/social/youtube.svg')">
+                <span class="sr-only">Ютуб</span>
               </a>
             </li>
             <li class="social__item">
-              <a class="social__link" href="#" target="_blank" style="background-image: url('images/icons/social/telegram.svg')">
-                <span class="sr-only">Cсылка на Телеграм</span>
+              <a class="social__link" href="#" target="_blank"
+                style="background-image: url('images/icons/social/telegram.svg')">
+                <span class="sr-only">Телеграм</span>
               </a>
             </li>
             <li class="social__item">
-              <a class="social__link" href="#" target="_blank" style="background-image: url('images/icons/social/instagram.svg')">
-                <span class="sr-only">Cсылка на Инстаграм</span>
+              <a class="social__link" href="#" target="_blank"
+                style="background-image: url('images/icons/social/instagram.svg')">
+                <span class="sr-only">Инстаграм</span>
               </a>
             </li>
           </ul>
@@ -84,17 +86,16 @@
   <div class="footer__bottom">
     <div class="container">
       <div class="footer__row">
-        <p class="footer__copy">© 2021 Фрешок</p>
+        <span class="footer__copy">© 2021 Фрешок</span>
         <ul class="payment">
           <li class="payment__item">
-            <a class="payment__link" href="#">
-              <img src="images/icons/payment/visa.png" alt="логотип платежная система visa">
+            <a class="payment__link" href="#" style="background-image: url('images/icons/payment/visa.svg')">
               <span class="sr-only">платежная система visa</span>
             </a>
           </li>
           <li class="payment__item">
-            <a class="payment__link" href="#">
-              <img src="images/icons/payment/mc.png" alt="логотип платежная система mastercatd">
+            <a class="payment__link payment__link--mastercard" href="#"
+              style="background-image: url('images/icons/payment/mastercard.svg')">
               <span class="sr-only">платежная система mastercatd</span>
             </a>
           </li>
@@ -103,7 +104,3 @@
     </div>
   </div>
 </footer>
-<script src="js/main.min.js"></script>
-</body>
-
-</html>

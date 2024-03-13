@@ -1,0 +1,27 @@
+// ************* benefits *********//
+.benefits {
+  background-color: $silver-100;
+  padding: 48px 0 29px;
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    gap: 65px;
+  }
+
+  &__item {
+    width: 264px;
+    padding-left: 74px;
+    text-align: left;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: left top;
+  }
+
+  &__title {
+    @extend %opensans-600;
+    font-size: 16px;
+    color: $dark-900;
+    margin-bottom: 7px;
+  }
+}

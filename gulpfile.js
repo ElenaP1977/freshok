@@ -5,7 +5,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const uglify = require('gulp-uglify');
 const imagemin = require('gulp-imagemin');
 const del = require('del');
-const include = require('gulp-include');
+const fileInclude = require('gulp-file-include');
 const browserSync = require('browser-sync').create();
 
 function browsersync() {
@@ -17,16 +17,15 @@ function browsersync() {
   })
 };
 
-function pages() {
-  return src('app/pages/*.html')
-    .pipe(include({
-      includePaths: 'app/components'
+const htmlInclude = () => {
+  return src(['app/html/*.html'])
+    .pipe(fileInclude({
+      prefix: '@',
+      basepath: '@file',
     }))
     .pipe(dest('app'))
-    .pipe(browserSync.stream())
+    .pipe(browserSync.stream());
 }
-
-
 
 function styles() {
   return src('app/scss/style.scss')
@@ -87,7 +86,7 @@ function cleandist() {
 function watching() {
   watch(['app/scss/**/*.scss'], styles);
   watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
-  watch(['app/components/*', 'app/pages/*'], pages);
+  watch(['app/html/**/*.html'], htmlInclude);
   watch(['app/**/*.html']).on('change', browserSync.reload);
 }
 
@@ -98,9 +97,9 @@ exports.scripts = scripts;
 exports.browsersync = browsersync;
 exports.watching = watching;
 exports.images = images;
-exports.pages = pages;
+exports.htmlInclude = htmlInclude;
 exports.cleandist = cleandist;
 exports.build = series(cleandist, images, build);
 
 
-exports.default = parallel(styles, scripts, browsersync, pages, watching);
+exports.default = parallel(htmlInclude, styles, scripts, browsersync, watching);

@@ -48,17 +48,21 @@ select {
   font: inherit;
 }
 
-// input,
-// button,
-// textarea,
-// select,
-// a {
-//   outline: 0;
-// }
+input,
+button,
+textarea,
+select,
+a {
+  outline: 0;
+}
 
 a {
   text-decoration: none;
   color: inherit;
+}
+
+input{
+  border: none;
 }
 
 button {

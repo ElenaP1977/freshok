@@ -1,6 +1,5 @@
 $(function () {
 
-
   $('.main-slider__wrapper').slick({
     prevArrow: '<button type="button" class="slick-prev"><img src="images/main-slider/arrows/arrow-left.svg" alt="arrow-left"></button>',
 
@@ -11,8 +10,34 @@ $(function () {
     cssEase: 'ease-out',
   });
 
+  $(".star").rateYo({
+    starWidth: "16px",
+    normalFill: "#FFB800",
+    ratedFill: "#FFB800",
+    numStars: 1,
+    readOnly: true,
 
-  var mixer = mixitup('.top-products__items');
+    // onChange: function (rating, rateYoInstance) {
+
+    //   $(this).next().text(rating);
+    // }
+
+  });
+
+
+
+
+  var containerEl1 = document.querySelector('[data-ref="container-1"]');
+  var containerEl2 = document.querySelector('[data-ref="container-2"]');
+
+  var config = {
+    controls: {
+      scope: 'local'
+    }
+  };
+
+  var mixer1 = mixitup(containerEl1, config);
+  var mixer2 = mixitup(containerEl2, config);
 
 });
 

@@ -10,10 +10,11 @@ $(function () {
 
   $('.banner-slider__wrapper').slick({
     arrows: false,
-    slidesToShow:1,
+    slidesToShow: 1,
     pauseOnHover: true,
-    // autoplay: true,
+    autoplay: true,
     variableWidth: true,
+    dots: true,
   });
 
 

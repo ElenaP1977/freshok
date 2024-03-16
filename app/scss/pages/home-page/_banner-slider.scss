@@ -1,5 +1,6 @@
 .banner-slider {
   padding-top: 0;
+  padding-bottom: 50px;
 
   &__item {
     @extend %bg;
@@ -89,4 +90,23 @@
     gap: 30px;
   }
 
+  .slick-dots {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+
+    button {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: $silver-600;
+      font-size: 0;
+    }
+  }
+
+    .slick-active {
+      button {
+      background-color: $dark-500;
+    }
+  }
 }

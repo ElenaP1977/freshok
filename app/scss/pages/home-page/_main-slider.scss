@@ -64,7 +64,7 @@
 
     &:hover {
       background-color: $green-200;
-      @include recolor($green-900);
+      // @include recolor($green-900);
     }
 
     &:active {

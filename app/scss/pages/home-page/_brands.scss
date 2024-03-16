@@ -6,9 +6,10 @@
   }
 
   &__link {
+    display: block;
     transition: opacity 0.4s;
     width: 80px;
-    height: 59px;
+    height: 60px;
     @extend %icon_bg;
     opacity: 0.5;
 

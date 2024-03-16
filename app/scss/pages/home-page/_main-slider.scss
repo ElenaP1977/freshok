@@ -50,6 +50,12 @@
     transform: translateY(-50%);
     border-radius: 6px;
     transition: box-shadow 0.3s, background-color 0.3s;
+    font-size: 0;
+    @extend %icon_bg;
+    background-size: auto;
+    width: 60px;
+    height: 60px;
+
 
     &:focus {
       box-shadow: 0 0 0 3px rgba(99, 166, 14, 0.5);
@@ -58,6 +64,7 @@
 
     &:hover {
       background-color: $green-200;
+      @include recolor($green-900);
     }
 
     &:active {
@@ -67,11 +74,15 @@
 
   .slick-prev {
     left: 60px;
-    background: rgba(255, 255, 255, 0.8);
+    background-image: url('../images/main-slider/arrows/chevron-left.svg');
   }
 
   .slick-next {
     right: 60px;
-    background: rgba(255, 255, 255, 0.8);
+    background-image: url('../images/main-slider/arrows/chevron-right.svg');
   }
+
+// .slick-next.slick-disabled{
+
+//   }
 }

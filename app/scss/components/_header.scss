@@ -64,13 +64,13 @@
         @include pseudo-bg;
         height: 22px;
         width: 32px;
-        left: 0;
+        left: -3px;
         top: 0;
         animation: bounce .7s infinite linear;
       }
 
       &--call {
-        padding-left: 34px;
+        padding-left: 35px;
 
         &::before {
           background-image: url('../images/icons/call.svg');
@@ -292,7 +292,8 @@
     display: flex;
     align-items: center;
     width: 100%;
-    position: relative;
+    background-color: $dark-800;
+    border-radius: 6px;
 
     &::before {
       background-image: url('../images/icons/search.svg');
@@ -306,7 +307,6 @@
 
   &__field {
     border-radius: 6px 0 0 6px;
-    max-width: 420px;
     width: 100%;
     background-color: $white;
     padding: 15px 20px 15px 50px;
@@ -314,25 +314,29 @@
 
     &::placeholder {
       color: $dark-800;
+      letter-spacing: 0.03em;
     }
 
     &:hover {
-      background-color: $green-100;
+      background-color: $green-200;
     }
 
     &:focus {
-      background-color: $silver-100;
+      background-color: $green-100;
     }
   }
 
   &__btn {
-    @extend %opensans-600;
-    line-height: 1.4;
-    font-size: 14px;
-    text-transform: uppercase;
+    display: inline-block;
+    color: $white;
     background-color: $dark-800;
     padding: 15px 52px;
     border-radius: 0 6px 6px 0;
+    @extend %opensans-600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    line-height: 1.4;
     transition: opacity 0.3s, box-shadow 0.3s;
 
     &:focus {
@@ -344,7 +348,8 @@
     }
 
     &:active {
-      box-shadow: inset 0 4px 4px 0 rgba($black, 0.25);
+      opacity: 0.5;
+      box-shadow: none;
     }
   }
 }

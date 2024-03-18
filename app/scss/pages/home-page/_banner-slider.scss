@@ -3,6 +3,8 @@
   padding-bottom: 50px;
 
   &__item {
+    display: flex;
+    flex-direction: column;
     @extend %bg;
     height: 300px;
     max-width: 300px;
@@ -15,7 +17,7 @@
   &__link {
     @extend %opensans-700;
     line-height: 1;
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.25);
+    text-shadow: 1px 1px rgba($black, 0.25);
   }
 
   &__subtitle {
@@ -28,7 +30,7 @@
     @extend %ruda-600;
     font-size: 30px;
     margin-bottom: 10px;
-    text-shadow: 2px 2px rgba(0, 0, 0, 0.25);
+    text-shadow: 2px 2px rgba($black, 0.25);
   }
 
   &__link {
@@ -51,7 +53,7 @@
 
     &:focus {
       border-radius: 3px;
-      box-shadow: 0 0 0 3px #eff6e7;
+      box-shadow: 0 0 0 3px $green-100;
 
       &:after {
         display: none;
@@ -66,7 +68,6 @@
       }
     }
   }
-
 
   .slick-current.slick-active {
     width: 630px;
@@ -104,8 +105,8 @@
     }
   }
 
-    .slick-active {
-      button {
+  .slick-active {
+    button {
       background-color: $dark-500;
     }
   }

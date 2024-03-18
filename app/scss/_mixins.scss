@@ -13,15 +13,13 @@
 }
 
 
-@mixin pseudo($display: block, $pos: absolute, $content: '', $br: no-repeat, $bz: contain, $bp: center) {
-  content: $content;
-  display: $display;
-  position: $pos;
-  background-repeat: $br;
+@mixin pseudo-bg($bz: contain) {
+  content: '';
+  position: absolute;
+  background-repeat: no-repeat;
   background-size: $bz;
-  background-position: $bp;
+  background-position: center;
 }
-
 
 
 @mixin recolor($color: #000) {

@@ -1,5 +1,3 @@
-// ************* footer *********//
-
 .footer {
   padding-top: 30px;
   background-color: $dark-800;
@@ -17,11 +15,11 @@
   }
 
   &__bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba($white, 0.1);
   }
 
   &__row {
-    padding: 24px 0;
+    padding: 23px 0;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
@@ -31,14 +29,15 @@
     column-count: 3;
     max-width: 600px;
     width: 100%;
+    margin-bottom: -18px;
   }
 
   &__item {
+    // gap не задается, у родителя margin-bottom -18 не помогает
     margin-bottom: 18px;
   }
 
   &__link {
-    width: 100%;
     transition: opacity 0.3s, box-shadow 0.3s, color 0.3s, border-radius 0.3s;
 
     &:focus {
@@ -62,51 +61,6 @@
   &__subscribe-form {
     margin-right: 150px;
     max-width: 306px;
-  }
-
-
-  .subscribe-form {
-    width: 100%;
-
-    &__label {
-      display: inline-block;
-      margin-bottom: 15px;
-    }
-
-    &__wrapper {
-      display: flex;
-      align-items: center;
-      width: 100%;
-    }
-
-    &__field {
-      border-radius: 6px 0 0 6px;
-      width: 100%;
-      background-color: $white;
-      padding: 10px 13px;
-
-      &::placeholder {
-        color: $dark-800;
-      }
-
-      &:focus {
-        background-color: $green-100;
-      }
-
-      &:hover {
-        background-color: $green-200;
-      }
-    }
-
-    &__btn {
-      @extend %btn;
-      padding: 12px 15px;
-      border-radius: 0 6px 6px 0;
-      @extend %opensans-700;
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 1;
-    }
   }
 
   .contacts {
@@ -135,31 +89,6 @@
     }
   }
 
-  .social {
-    display: flex;
-    gap: 10px;
-
-    &__link {
-      @extend %icon_bg;
-      width: 32px;
-      height: 32px;
-      transition: opacity 0.3s, box-shadow 0.3s, color 0.3s;
-
-      &:focus {
-        border-radius: 3px;
-        box-shadow: 0 0 0 3px $green-200;
-      }
-
-      &:hover {
-        opacity: 0.7;
-      }
-
-      &:active {
-        color: $green-200;
-      }
-    }
-  }
-
   .payment {
     display: flex;
     gap: 24px;
@@ -172,6 +101,74 @@
       &--mastercard {
         width: 49px;
       }
+    }
+  }
+}
+
+.subscribe-form {
+  width: 100%;
+
+  &__label {
+    display: inline-block;
+    margin-bottom: 15px;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  &__field {
+    border-radius: 6px 0 0 6px;
+    width: 100%;
+    background-color: $white;
+    padding: 10px 13px;
+
+    &::placeholder {
+      color: $dark-800;
+    }
+
+    &:focus {
+      background-color: $green-100;
+    }
+
+    &:hover {
+      background-color: $green-200;
+    }
+  }
+
+  &__btn {
+    padding: 12px 15px;
+    border-radius: 0 6px 6px 0;
+    @extend %opensans-700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1;
+  }
+}
+
+.social {
+  display: flex;
+  gap: 10px;
+
+  &__link {
+    @extend %icon_bg;
+    width: 32px;
+    height: 32px;
+    transition: opacity 0.3s, box-shadow 0.3s, color 0.3s;
+
+    &:focus {
+      border-radius: 3px;
+      box-shadow: 0 0 0 3px $green-200;
+    }
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &:active {
+      color: $green-200;
     }
   }
 }

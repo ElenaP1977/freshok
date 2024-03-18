@@ -1,4 +1,3 @@
-// ************* top *********//
 .top-products {
   text-align: center;
 
@@ -10,14 +9,12 @@
   }
 
   &__btn {
-    display: inline-block;
-    @extend %btn;
     border: 1px solid $green-900;
     background-color: $white;
     color: $green-900;
 
     &:focus {
-      box-shadow: 0 0 0 4px rgba(99, 166, 14, 0.5);
+      box-shadow: 0 0 0 4px rgba($green-900, 0.5);
     }
 
     &:hover {
@@ -25,7 +22,7 @@
     }
 
     &:active {
-      box-shadow: inset 0 10px 4px 0 rgba(0, 0, 0, 0.1);
+      box-shadow: inset 0 10px 4px 0 rgba($black, 0.1);
     }
   }
 }
@@ -43,11 +40,11 @@
     letter-spacing: 0.03em;
     text-transform: uppercase;
     border-bottom: 3px solid transparent;
-    transition: box-shadow 0.3s, color 0.3s, border 0.3s;
+    transition: box-shadow 0.3s, color 0.3s, border-color 0.3s;
 
     &:focus {
       border-radius: 3px;
-      box-shadow: 0 0 0 3px #e0edcf;
+      box-shadow: 0 0 0 3px $green-200;
       border-bottom: none;
     }
 
@@ -56,15 +53,14 @@
     }
 
     &:active {
-      border-color: rgba(99, 166, 14, 0.2);
+      border-color: rgba($green-900, 0.2);
     }
   }
 }
 
 .mixitup-control-active {
-  border-bottom: 3px solid rgba(99, 166, 14, 0.2);
+  border-bottom: 3px solid rgba($green-900, 0.2);
 }
-
 
 .product {
   position: relative;
@@ -75,7 +71,7 @@
   border: 1px solid $silver-600;
   border-radius: 6px;
   padding-top: 57px;
-  transition: border-color 0.3s, transform 0.5s;
+  transition: border 0.3s, transform 0.5s;
 
   &:hover {
     border: 1px solid $green-900;
@@ -94,12 +90,14 @@
   }
 
   &__favorite {
-    margin-top: 5px;
-    background-image: url('../images/icons/favorite-btn.svg');
+    background-image: url('../images/icons/favorite.svg');
+    @include recolor($silver-600);
     @extend %icon_bg;
+    background-size: auto;
     width: 32px;
     height: 29px;
-    transition: box-shadow 0.3s, fill 0.3s, opacity 0.3s;
+    margin-top: 5px;
+    transition: box-shadow 0.3s, opacity 0.3s;
 
     &:focus {
       border-radius: 3px;
@@ -118,6 +116,7 @@
   }
 
   &__img-box {
+    display: block;
     height: 215px;
     overflow: hidden;
     position: relative;
@@ -134,19 +133,20 @@
     }
 
     &:hover {
-      .product__link-box {
+
+      &::before {
+        background-color: rgba($black, 0.1);
+      }
+
+      .product__loupe {
         opacity: 1;
       }
-    }
 
-    &:hover {
-      &::before {
-        background-color: rgba(0, 0, 0, 0.1);
-      }
     }
   }
 
-  &__link-box {
+  &__loupe {
+    display: block;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -155,21 +155,18 @@
     transform: translate(-50%, -50%);
     border-radius: 50%;
     background-color: $white;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     opacity: 0;
-    background-color: $white;
-    transition: background-color 0.5s, opacity 0.5s;
-  }
+    transition: opacity 0.7s;
 
-  &__link {
-    width: 20px;
-    height: 20px;
-    background-image: url('../images/icons/user_nav/product-loupe.svg');
-    @extend %icon_bg;
-    display: inherit;
+    &::before {
+      @include pseudo-bg;
+      @include recolor($green-900);
+      width: 20px;
+      height: 20px;
+      top: 16px;
+      left: 15px;
+      background-image: url('../images/icons/search.svg');
+    }
   }
 
   &__img {
@@ -199,22 +196,22 @@
     align-items: flex-end;
   }
 
-  &__old-price,
-  &__new-price {
+  &__price {
+    text-align: left;
     line-height: 1;
     letter-spacing: 0.03em;
-  }
 
-  &__old-price {
-    color: $silver-600;
-    position: relative;
+    &--old {
+      color: $silver-600;
+      position: relative;
 
-    &::before {
-      @include pseudo;
-      border-bottom: 1px solid $silver-600;
-      width: 100%;
-      height: 50%;
-      transform: rotate(-12deg);
+      &::before {
+        @include pseudo-bg;
+        border-bottom: 1px solid $silver-600;
+        width: 100%;
+        height: 50%;
+        transform: rotate(-12deg);
+      }
     }
   }
 
@@ -223,55 +220,36 @@
     width: 32px;
     height: 32px;
     padding: 8px;
-    @extend %btn;
-    background-image: url('../images/icons/user_nav/product-cart.svg');
+    background-image: url('../images/icons/cart.svg');
     background-position: center;
     background-repeat: no-repeat;
+    background-size: contain;
   }
 
+  .product-label {
+    &__item {
+      border-radius: 6px;
+      color: $white;
+      @extend %opensans-700;
+      padding: 3px 6px;
+      font-size: 10px;
+      line-height: 1;
+      width: fit-content;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      letter-spacing: 0.03em;
 
-  .product-label__item {
-    border-radius: 6px;
-    color: $white;
-    @extend %opensans-700;
-    padding: 3px 6px;
-    font-size: 10px;
-    line-height: 1;
-    width: fit-content;
-    text-transform: uppercase;
-    display: none;
-    margin-bottom: 6px;
-    letter-spacing: 0.03em;
+      &--new {
+        background-color: $green-900;
+      }
 
-    &--new {
-      background-color: $green-900;
-    }
+      &--sale {
+        background-color: $red-900;
+      }
 
-    &--sale {
-      background-color: $red-900;
-    }
-
-    &--hit {
-      background-color: $orange-900;
-    }
-  }
-
-
-  .product__top--new {
-    .product-label__item--new {
-      display: block;
-    }
-  }
-
-  .product__top--sale {
-    .product-label__item--sale {
-      display: block;
-    }
-  }
-
-  .product__top--hit {
-    .product-label__item--hit {
-      display: block;
+      &--hit {
+        background-color: $orange-900;
+      }
     }
   }
 }

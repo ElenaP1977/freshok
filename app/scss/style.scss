@@ -7,11 +7,13 @@
 
 
 @import 'components/header';
+@import 'components/search-form';
 @import 'pages/home-page/main-slider';
 @import 'components/benefits';
 @import 'pages/home-page/top-products';
-@import 'pages/home-page/banner-slider';
+@import 'components/product';
+@import 'pages/home-page/banner';
 @import 'pages/home-page/promotions';
-@import 'pages/home-page/brands';
+@import 'pages/home-page/brand-slider';
 @import 'pages/home-page/our-news';
 @import 'components/footer';

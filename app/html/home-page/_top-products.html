@@ -1,7 +1,7 @@
 <section class="top-products section">
   <div class="container">
     <h2 class="title">Топовые товары</h2>
-    <div data-ref="container-1">
+    <div data-ref="top-products">
       <ul class="tabs">
         <li>
           <button class="tabs__btn mixitup-control-active" type="button" data-filter="all">Все товары</button>
@@ -21,11 +21,10 @@
       </ul>
 
 
-      <ul data-ref="top-products__items" class="top-products__items">
+      <ul data-ref="top-products" class="top-products__items">
 
-        <li class="mix fruits">
+        <li class="top-products__item mix fruits">
           <article class="product">
-            <h3 class="sr-only">Карточка товара</h3>
             <div class="product__top">
               <ul class="product-label">
                 <li class="product-label__item product-label__item--new">Новинка</li>
@@ -37,18 +36,23 @@
             </div>
 
             <a class="product__img-box" href="#">
-              <img class="product__img" src="../images/products/pineapple.png" alt="Ананас">
+              <img class="product__img" src="images/products/pineapple.png" alt="Ананас">
               <span class="product__loupe"></span>
             </a>
 
             <div class="product__content">
-              <a class="product__title" href="#">Ананас, 1кг</a>
+              <h3 class="product__title">
+                <a class="product__link" href="#">Ананас, 1кг</a>
+              </h3>
+
               <div class="product__bottom">
 
-                <ul class="product__prices">
-                  <li class="product__price product__price--old">1999 ₽</li>
-                  <li class="product__price">999 ₽</li>
-                </ul>
+                <div class="product__prices">
+                  <span class="product__price product__price--old">1999 ₽</span>
+                  <span class="sr-only">Старая цена</span>
+                  <span class="product__price">999 ₽</span>
+                  <span class="sr-only">Актуальная цена</span>
+                </div>
 
                 <button class="product__cart btn" type="button">
                   <span class="sr-only">Добавить в корзину</span>
@@ -58,9 +62,8 @@
           </article>
         </li>
 
-        <li class="mix fruits">
+        <li class="top-products__item mix fruits">
           <article class="product">
-            <h3 class="sr-only">Карточка товара</h3>
             <div class="product__top">
               <ul class="product-label">
               </ul>
@@ -70,18 +73,20 @@
             </div>
 
             <a class="product__img-box" href="#">
-              <img class="product__img" src="../images/products/lemon.png" alt="Лимон">
+              <img class="product__img" src="images/products/lemon.png" alt="Лимон">
               <span class="product__loupe"></span>
             </a>
 
             <div class="product__content">
-              <a class="product__title" href="#">Лимон, 1кг</a>
+              <h3 class="product__title">
+                <a class="product__link" href="#">Лимон, 1кг</a>
+              </h3>
+
               <div class="product__bottom">
-
-                <ul class="product__prices">
-                  <li class="product__price">199 ₽</li>
-                </ul>
-
+                <div class="product__prices">
+                  <span class="product__price">199 ₽</span>
+                  <span class="sr-only">Актуальная цена</span>
+                </div>
                 <button class="product__cart btn" type="button">
                   <span class="sr-only">Добавить в корзину</span>
                 </button>
@@ -90,74 +95,8 @@
           </article>
         </li>
 
-        <li class="mix fruits">
+        <li class="top-products__item mix fruits">
           <article class="product">
-            <h3 class="sr-only">Карточка товара</h3>
-            <div class="product__top">
-              <ul class="product-label">
-                <li class="product-label__item product-label__item--hit">Хит</li>
-              </ul>
-              <button class="product__favorite" type="button">
-                <span class="sr-only">Добавить в избранное</span>
-              </button>
-            </div>
-
-            <a class="product__img-box" href="#">
-              <img class="product__img" src="../images/products/dragon.png" alt="Питахайя">
-              <span class="product__loupe"></span>
-            </a>
-
-            <div class="product__content">
-              <a class="product__title" href="#">Питахайя красная с белой мякотью, 1шт</a>
-              <div class="product__bottom">
-
-                <ul class="product__prices">
-                  <li class="product__price">1019 ₽</li>
-                </ul>
-
-                <button class="product__cart btn" type="button">
-                  <span class="sr-only">Добавить в корзину</span>
-                </button>
-              </div>
-            </div>
-          </article>
-        </li>
-
-        <li class="mix grocery">
-          <article class="product">
-            <h3 class="sr-only">Карточка товара</h3>
-            <div class="product__top">
-              <ul class="product-label">
-              </ul>
-              <button class="product__favorite" type="button">
-                <span class="sr-only">Добавить в избранное</span>
-              </button>
-            </div>
-
-            <a class="product__img-box" href="#">
-              <img class="product__img" src="../images/products/ketchup.png" alt="Кетчуп томатный детский органический">
-              <span class="product__loupe"></span>
-            </a>
-
-            <div class="product__content">
-              <a class="product__title" href="#">Кетчуп томатный детский органический Bio-Zentrale 500мл, 1 шт</a>
-              <div class="product__bottom">
-
-                <ul class="product__prices">
-                  <li class="product__price">600 ₽</li>
-                </ul>
-
-                <button class="product__cart btn" type="button">
-                  <span class="sr-only">Добавить в корзину</span>
-                </button>
-              </div>
-            </div>
-          </article>
-        </li>
-
-        <li class="mix vegetables">
-          <article class="product">
-            <h3 class="sr-only">Карточка товара</h3>
             <div class="product__top">
               <ul class="product-label">
                 <li class="product-label__item product-label__item--hit">Хит</li>
@@ -168,17 +107,20 @@
             </div>
 
             <a class="product__img-box" href="#">
-              <img class="product__img" src="../images/products/carrot.png" alt="Морковь молодая">
+              <img class="product__img" src="images/products/dragon.png" alt="Питахайя">
               <span class="product__loupe"></span>
             </a>
 
             <div class="product__content">
-              <a class="product__title" href="#">Морковь молодая с бабушкиной грядки, 1кг</a>
+              <h3 class="product__title">
+                <a class="product__link" href="#">Питахайя красная с белой мякотью, 1шт</a>
+              </h3>
               <div class="product__bottom">
 
-                <ul class="product__prices">
-                  <li class="product__price">49 ₽</li>
-                </ul>
+                <div class="product__prices">
+                  <span class="product__price">1019 ₽</span>
+                  <span class="sr-only">Актуальная цена</span>
+                </div>
 
                 <button class="product__cart btn" type="button">
                   <span class="sr-only">Добавить в корзину</span>
@@ -188,9 +130,80 @@
           </article>
         </li>
 
-        <li class="mix beverages">
+        <li class="top-products__item mix grocery">
           <article class="product">
-            <h3 class="sr-only">Карточка товара</h3>
+            <div class="product__top">
+              <ul class="product-label">
+              </ul>
+              <button class="product__favorite" type="button">
+                <span class="sr-only">Добавить в избранное</span>
+              </button>
+            </div>
+
+            <a class="product__img-box" href="#">
+              <img class="product__img" src="images/products/ketchup.png" alt="Кетчуп томатный детский органический">
+              <span class="product__loupe"></span>
+            </a>
+
+            <div class="product__content">
+              <h3 class="product__title">
+                <a class="product__link" href="#">Кетчуп томатный детский органический Bio-Zentrale 500мл, 1 шт</a>
+              </h3>
+
+              <div class="product__bottom">
+
+                <div class="product__prices">
+                  <span class="product__price">600 ₽</span>
+                  <span class="sr-only">Актуальная цена</span>
+                </div>
+
+                <button class="product__cart btn" type="button">
+                  <span class="sr-only">Добавить в корзину</span>
+                </button>
+              </div>
+            </div>
+          </article>
+        </li>
+
+        <li class="top-products__item mix vegetables">
+          <article class="product">
+            <div class="product__top">
+              <ul class="product-label">
+                <li class="product-label__item product-label__item--hit">Хит</li>
+              </ul>
+              <button class="product__favorite" type="button">
+                <span class="sr-only">Добавить в избранное</span>
+              </button>
+            </div>
+
+            <a class="product__img-box" href="#">
+              <img class="product__img" src="images/products/carrot.png" alt="Морковь молодая">
+              <span class="product__loupe"></span>
+            </a>
+
+            <div class="product__content">
+
+              <h3 class="product__title">
+                <a class="product__link" href="#">Морковь молодая с бабушкиной грядки, 1кг</a>
+              </h3>
+
+              <div class="product__bottom">
+
+                <div class="product__prices">
+                  <span class="product__price">49 ₽</span>
+                  <span class="sr-only">Актуальная цена</span>
+                </div>
+
+                <button class="product__cart btn" type="button">
+                  <span class="sr-only">Добавить в корзину</span>
+                </button>
+              </div>
+            </div>
+          </article>
+        </li>
+
+        <li class="top-products__item mix beverages">
+          <article class="product">
             <div class="product__top">
               <ul class="product-label">
                 <li class="product-label__item product-label__item--sale">-30%</li>
@@ -201,20 +214,25 @@
             </div>
 
             <a class="product__img-box" href="#">
-              <img class="product__img" src="../images/products/juice.png"
+              <img class="product__img" src="images/products/juice.png"
                 alt="Напиток сокосодержащий Sanpellegrino Aranciata Orange Красный апельсин">
               <span class="product__loupe"></span>
             </a>
 
             <div class="product__content">
-              <a class="product__title" href="#">Напиток сокосодержащий Sanpellegrino Aranciata Orange Красный апельсин
-                безалкогольн...</a>
+              <h3 class="product__title">
+                <a class="product__link" href="#">Напиток сокосодержащий Sanpellegrino Aranciata Orange Красный апельсин
+                  безалкогольн...</a>
+              </h3>
+
               <div class="product__bottom">
 
-                <ul class="product__prices">
-                  <li class="product__price product__price--old">299 ₽</li>
-                  <li class="product__price">199 ₽</li>
-                </ul>
+                <div class="product__prices">
+                  <span class="product__price product__price--old">299 ₽</span>
+                  <span class="sr-only">Старая цена</span>
+                  <span class="product__price">199 ₽</span>
+                  <span class="sr-only">Актуальная цена</span>
+                </div>
 
                 <button class="product__cart btn" type="button">
                   <span class="sr-only">Добавить в корзину</span>
@@ -224,9 +242,8 @@
           </article>
         </li>
 
-        <li class="mix beverages">
+        <li class="top-products__item mix beverages">
           <article class="product">
-            <h3 class="sr-only">Карточка товара</h3>
             <div class="product__top">
               <ul class="product-label">
                 <li class="product-label__item product-label__item--new">Новинка</li>
@@ -237,18 +254,22 @@
             </div>
 
             <a class="product__img-box" href="#">
-              <img class="product__img" src="../images/products/coffee.png"
+              <img class="product__img" src="images/products/coffee.png"
                 alt="Кофе с коноплей органический Caffé Salomoni">
               <span class="product__loupe"></span>
             </a>
 
             <div class="product__content">
-              <a class="product__title" href="#">Кофе с коноплей органический Caffé Salomoni 250г</a>
+              <h3 class="product__title">
+                <a class="product__link" href="#">Кофе с коноплей органический Caffé Salomoni 250г</a>
+              </h3>
+
               <div class="product__bottom">
 
-                <ul class="product__prices">
-                  <li class="product__price">877 ₽</li>
-                </ul>
+                <div class="product__prices">
+                  <span class="product__price">877 ₽</span>
+                  <span class="sr-only">Актуальная цена</span>
+                </div>
 
                 <button class="product__cart btn" type="button">
                   <span class="sr-only">Добавить в корзину</span>
@@ -258,9 +279,8 @@
           </article>
         </li>
 
-        <li class="mix vegetables">
+        <li class="top-products__item mix vegetables">
           <article class="product">
-            <h3 class="sr-only">Карточка товара</h3>
             <div class="product__top">
               <ul class="product-label">
                 <li class="product-label__item product-label__item--new">Новинка</li>
@@ -271,17 +291,21 @@
             </div>
 
             <a class="product__img-box" href="#">
-              <img class="product__img" src="../images/products/paprik.png" alt="Перец оранжевый">
+              <img class="product__img" src="images/products/paprik.png" alt="Перец оранжевый">
               <span class="product__loupe"></span>
             </a>
 
             <div class="product__content">
-              <a class="product__title" href="#">Перец оранжевый, 1кг</a>
+              <h3 class="product__title">
+                <a class="product__link" href="#">Перец оранжевый, 1кг</a>
+              </h3>
+
               <div class="product__bottom">
 
-                <ul class="product__prices">
-                  <li class="product__price">349 ₽</li>
-                </ul>
+                <div class="product__prices">
+                  <span class="product__price">349 ₽</span>
+                  <span class="sr-only">Актуальная цена</span>
+                </div>
 
                 <button class="product__cart btn" type="button">
                   <span class="sr-only">Добавить в корзину</span>

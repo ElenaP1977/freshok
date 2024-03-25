@@ -12,20 +12,17 @@
   .tabs {
     gap: 30px;
   }
-}
 
-.product {
-  &--line {
+  .product {
     position: relative;
     display: flex;
     flex-direction: row;
     gap: 12px;
     background-color: $white;
     max-width: 300px;
-    min-height: 124px;
     padding: 12px;
 
-    .product__img-box {
+    &__img-box {
       display: block;
       width: 100px;
       height: 100px;
@@ -38,23 +35,28 @@
       }
     }
 
-    .product__content {
-      width: 164px;
+    &__content {
+      max-width: 164px;
       padding: 0;
       z-index: 2;
     }
 
-    .product__title {
-      height: 58px;
-      margin-bottom: 7px;
+    &__link {
+      display: block;
+      min-height: 60px;
     }
 
-    .product__prices {
+    &__bottom {
+      position: relative;
+    }
+
+    &__prices {
       display: flex;
       gap: 12px;
     }
 
-    .product__price {
+    &__price {
+
       &--new {
         font-size: 20px;
       }
@@ -78,47 +80,52 @@
       z-index: 1;
     }
   }
-}
 
-.product-availability {
-  &__item {
-    @extend %opensans-600;
-    font-size: 10px;
-    line-height: 100%;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-    text-align: left;
-    margin-bottom: 5px;
+  .product-availability {
+    position: absolute;
+    bottom: 25px;
+    left: 0;
 
-    &--exist {
-      color: $green-900;
-    }
+    &__item {
+      font-family: 'OpenSans', sans-serif;
+      font-weight: 600;
+      font-size: 10px;
+      line-height: 100%;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      text-align: left;
 
-    &--ends {
-      color: $red-900;
-    }
+      &--exist {
+        color: $green-900;
+      }
 
-    &--none {
-      color: $silver-600;
+      &--ends {
+        color: $red-900;
+      }
+
+      &--none {
+        color: $silver-600;
+      }
     }
   }
-}
 
-.rating {
-  @extend %opensans-700;
-  font-size: 14px;
-  line-height: 1;
-  letter-spacing: 0.03em;
-  position: relative;
-  display: block;
-  padding-right: 20px;
+  .rating {
+    font-family: 'OpenSans', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1;
+    letter-spacing: 0.03em;
+    position: relative;
+    display: block;
+    padding-right: 20px;
 
-  &::after {
-    @include pseudo-bg;
-    background-image: url('../images/icons/star.svg');
-    width: 16px;
-    height: 16px;
-    right: 3px;
-    bottom: 0;
+    &::after {
+      @include pseudo-bg;
+      background-image: url('../images/icons/star.svg');
+      width: 16px;
+      height: 16px;
+      right: 2px;
+      bottom: 0;
+    }
   }
 }

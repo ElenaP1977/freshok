@@ -3,7 +3,8 @@
   &__top {
     padding: 16px 0;
     background-color: $dark-800;
-    @extend %opensans-700;
+    font-family: 'OpenSans', sans-serif;
+    font-weight: 700;
     color: $white;
     font-size: 13px;
     letter-spacing: 0.03em;
@@ -99,14 +100,15 @@
     align-items: center;
   }
 
-  .top-catalog {
+  &__catalog {
     margin-right: 30px;
     position: relative;
 
     .burger-catalog {
       max-width: 240px;
       border-radius: 6px;
-      @extend %opensans-600;
+      font-family: 'OpenSans', sans-serif;
+      font-weight: 600;
       letter-spacing: 0.03em;
       background-color: $white;
       color: $green-900;
@@ -131,10 +133,19 @@
         }
       }
 
+      &:focus {
+        border-radius: 3px;
+        box-shadow: 0 0 0 3px $green-100;
+      }
+
       &:hover,
       &--active {
         background-color: $green-200;
         border-radius: 6px 6px 0 0;
+      }
+
+      &:active {
+        opacity: 0.7;
       }
 
       &__line {
@@ -164,192 +175,130 @@
         }
       }
     }
-  }
 
-  .catalog-menu {
-    opacity: 0;
-    position: absolute;
-    left: 0;
-    max-width: 240px;
-    width: 100%;
-    top: 50px;
-    text-align: left;
-    background-color: $white;
-    border: 1px solid $silver-100;
-    border-radius: 0 0 6px 6px;
-    z-index: 10;
-    transition: opacity 0.6s;
+    .catalog-menu {
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      left: 0;
+      max-width: 240px;
+      width: 100%;
+      top: 50px;
+      text-align: left;
+      background-color: $white;
+      border: 1px solid $silver-100;
+      border-radius: 0 0 6px 6px;
+      z-index: 10;
+      transition: opacity 0.5s ease-in-out;
 
-    &__item {
-      color: $black;
-      font-size: 16px;
-      line-height: 1.2;
-      letter-spacing: 0.03em;
-      border: 3px solid transparent;
-      border-bottom: 1px solid rgba($silver-600, 0.3);
+      &__item {
+        color: $black;
+        font-size: 16px;
+        line-height: 1.2;
+        letter-spacing: 0.03em;
+        border: 3px solid transparent;
+        border-bottom: 1px solid rgba($silver-600, 0.3);
 
-      &:focus {
-        box-shadow: 0 0 0 3px $green-200;
-        border: none;
+        &:focus {
+          box-shadow: 0 0 0 3px $green-200;
+          border: none;
+        }
+
+        &:hover {
+          border-left-color: $green-900;
+        }
+
+        &:active {
+          border-left-color: transparent;
+        }
       }
 
-      &:hover {
-        border-left-color: $green-900;
+      &__link {
+        display: block;
+        transition: color 0.3s;
+        padding: 15px 24px;
+
+        &:focus {
+          box-shadow: 0 0 0 3px $green-200;
+        }
+
+        &:hover {
+          color: $green-900;
+        }
+
+        &:active {
+          color: $silver-600;
+        }
       }
 
-      &:active {
-        border-left-color: transparent;
+      &--active {
+        visibility: visible;
+        opacity: 1;
+
+        .burger-catalog {
+          &:focus {
+            box-shadow: none;
+          }
+        }
       }
     }
+  }
+
+  .user-nav {
+    display: flex;
+    gap: 12px;
+    margin-left: auto;
 
     &__link {
-      display: block;
-      transition: color 0.3s;
-      padding: 15px 24px;
+      @extend %icon_bg;
+      width: 50px;
+      height: 50px;
+      border-radius: 3px;
+      position: relative;
+      transition: opacity 0.4s, background-color 0.4s, box-shadow 0.4s;
+
+      &--user {
+        background-image: url('../images/icons/user.svg');
+      }
+
+      &--favorite {
+        background-image: url('../images/icons/favorite.svg');
+      }
+
+      &--cart {
+        background-image: url('../images/icons/cart.svg');
+      }
 
       &:focus {
-        box-shadow: 0 0 0 3px $green-200;
+        box-shadow: inset 0 0 0 3px $green-100;
+        background-color: rgba($white, 0.1);
       }
 
       &:hover {
-        color: $green-900;
+        background-color: rgba($white, 0.1);
       }
 
       &:active {
-        color: $silver-600;
+        opacity: 0.5;
       }
     }
 
-    &--active {
-      opacity: 1;
-    }
-  }
-}
-
-.user-nav {
-  display: flex;
-  gap: 12px;
-  margin-left: auto;
-
-  &__link {
-    @extend %icon_bg;
-    width: 50px;
-    height: 50px;
-    border-radius: 3px;
-    position: relative;
-    transition: opacity 0.4s, background-color 0.4s, box-shadow 0.4s;
-
-    &--user {
-      background-image: url('../images/icons/user.svg');
-    }
-
-    &--favorite {
-      background-image: url('../images/icons/favorite.svg');
-    }
-
-    &--cart {
-      background-image: url('../images/icons/cart.svg');
-    }
-
-    &:focus {
-      box-shadow: inset 0 0 0 3px $green-100;
-      background-color: rgba($white, 0.1);
-    }
-
-    &:hover {
-      background-color: rgba($white, 0.1);
-    }
-
-    &:active {
-      opacity: 0.5;
-    }
-  }
-
-  &__num {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    background-color: $white;
-    color: $red-900;
-    @extend %opensans-600;
-    font-size: 10px;
-    letter-spacing: 0.03em;
-    top: 5px;
-    left: 3px;
-  }
-}
-
-.search-form {
-  max-width: 576px;
-  width: 100%;
-  position: relative;
-
-  &__wrapper {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    background-color: $dark-800;
-    border-radius: 6px;
-
-    &::before {
-      background-image: url('../images/icons/search.svg');
-      width: 20px;
-      height: 20px;
-      @include pseudo-bg;
-      top: 16px;
-      left: 13px;
-    }
-  }
-
-  &__field {
-    border-radius: 6px 0 0 6px;
-    width: 100%;
-    background-color: $white;
-    padding: 15px 20px 15px 50px;
-    transition: color 0.3s, background-color 0.3s;
-
-    &::placeholder {
-      color: $dark-800;
+    &__num {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background-color: $white;
+      color: $red-900;
+      font-family: 'OpenSans', sans-serif;
+      font-weight: 600;
+      font-size: 10px;
       letter-spacing: 0.03em;
-    }
-
-    &:hover {
-      background-color: $green-200;
-    }
-
-    &:focus {
-      background-color: $green-100;
-    }
-  }
-
-  &__btn {
-    display: inline-block;
-    color: $white;
-    background-color: $dark-800;
-    padding: 15px 52px;
-    border-radius: 0 6px 6px 0;
-    @extend %opensans-600;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
-    line-height: 1.4;
-    transition: opacity 0.3s, box-shadow 0.3s;
-
-    &:focus {
-      box-shadow: 0 0 0 4px rgba($white, 0.5);
-    }
-
-    &:hover {
-      opacity: 0.85;
-    }
-
-    &:active {
-      opacity: 0.5;
-      box-shadow: none;
+      top: 5px;
+      left: 3px;
     }
   }
 }

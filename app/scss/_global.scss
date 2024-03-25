@@ -7,7 +7,8 @@ body {
 body {
   background-color: $white;
   color: $dark-500;
-  @extend %opensans-400;
+  font-family: 'OpenSans', sans-serif;
+  font-weight: 400;
   font-size: 14px;
   line-height: 1.4;
   display: flex;
@@ -42,7 +43,8 @@ body {
 }
 
 .title {
-  @extend %ruda-600;
+  font-family: 'Ruda', sans-serif;
+  font-weight: 600;
   color: $dark-900;
   font-size: 32px;
   line-height: 1.4;
@@ -76,7 +78,6 @@ body {
   }
 }
 
-
 .btn {
   display: inline-block;
   background-color: $green-900;
@@ -89,14 +90,14 @@ body {
   transition: box-shadow 0.3s, background-color 0.3s;
 
   &:focus {
-    box-shadow: 0 0 0 4px #e0edcf;
+    box-shadow: 0 0 0 4px $green-200;
   }
 
   &:hover {
-    background-color: #4d810c;
+    background-color: $green-1010;
   }
 
   &:active {
-    box-shadow: inset 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: inset 0 4px 4px 0 rgba($black, 0.25);
   }
 }

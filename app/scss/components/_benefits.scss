@@ -9,8 +9,8 @@
   }
 
   &__item {
-    // без фиксированной ширины не получается, 
-    width: 264px;
+    max-width: 264px;
+    width: 100%;
     padding-left: 74px;
     text-align: left;
     background-repeat: no-repeat;
@@ -19,7 +19,8 @@
   }
 
   &__title {
-    @extend %opensans-600;
+    font-family: 'OpenSans', sans-serif;
+    font-weight: 600;
     font-size: 16px;
     color: $dark-900;
     margin-bottom: 7px;
